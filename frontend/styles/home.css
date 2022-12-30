@@ -93,4 +93,110 @@ header .navBar .likeCartPro .iconBox span {
 }
 .shopTopCatDiv .catCarousel .navBtns .navBtn.swiper-button-disabled {
   background: grey;
+}
+
+.allProductsMain {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.allProductsMain .catDiv {
+  margin-top: 25px;
+}
+.allProductsMain .catDiv .head {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #D1D1D1;
+}
+.allProductsMain .catDiv .options .option {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.allProductsMain .catDiv .options .option .text {
+  flex: 1;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+.allProductsMain .catDiv .options .option .icoBox {
+  height: 20px;
+  width: 20px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(165, 165, 165);
+  font-size: 14px;
+}
+.allProductsMain .companyDiv {
+  margin-top: 20px;
+}
+.allProductsMain .companyDiv .head {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  padding-bottom: 13px;
+}
+.allProductsMain .companyDiv select {
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid #D1D1D1;
+  outline: none;
+}
+.allProductsMain .companyDiv select option {
+  padding: 5px 10px;
+  background: #F47B20;
+  color: white;
+}
+.allProductsMain .priceDiv {
+  margin-top: 20px;
+}
+.allProductsMain .priceDiv .head {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  padding-bottom: 13px;
+}
+.allProductsMain .priceDiv .value {
+  font-weight: 300;
+  font-size: 20px;
+}
+.allProductsMain .priceDiv input {
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+  accent-color: #F47B20;
+}
+.allProductsMain .clearDiv {
+  margin-top: 40px;
+}
+.allProductsMain .clearDiv .clrBtn {
+  border: none;
+  width: 180px;
+  background: #F47B20;
+  color: white;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 9px;
+  display: block;
+  margin: auto;
+  scale: 1;
+  transition: all 0.2s;
+}
+.allProductsMain .clearDiv .clrBtn:hover {
+  background: black;
+  color: white;
+  scale: 1.2;
 }/*# sourceMappingURL=home.css.map */

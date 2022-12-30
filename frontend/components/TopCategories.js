@@ -37,7 +37,7 @@ export default function TopCategories() {
                         >
                             <SwiperSlide>
                                 <div className="catBox">
-                                    <Link href={'/about'} style={{ textDecoration: 'none' }}>
+                                    <Link href={'/products?cat=bagpacks'} style={{ textDecoration: 'none' }}>
                                         <img src="/images/bag1.jpg" alt="banner image" className="w-100 bannerImg" />
                                         <div className="catName">
                                             All backpacks

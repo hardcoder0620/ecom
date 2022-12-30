@@ -100,13 +100,15 @@ header {
             line-height: 30px;
             color: #000000;
         }
-        .navBtns{
+
+        .navBtns {
             display: flex;
             position: absolute;
             top: 30px;
             right: 0px;
             column-gap: 15px;
-            .navBtn{
+
+            .navBtn {
                 height: 35px;
                 width: 35px;
                 display: grid;
@@ -114,12 +116,148 @@ header {
                 background: black;
                 font-size: 24px;
                 cursor: pointer;
-                .iconn{
+
+                .iconn {
                     color: white;
                 }
-                &.swiper-button-disabled{
+
+                &.swiper-button-disabled {
                     background: grey;
                 }
+            }
+        }
+    }
+}
+
+
+// allProductsMain
+.allProductsMain {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    .catDiv {
+        margin-top: 25px;
+
+        .head {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            color: #000000;
+            padding-bottom: 13px;
+            border-bottom: 1px solid #D1D1D1;
+        }
+
+        .options {
+
+            .option {
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+
+                .text {
+                    flex: 1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: #000000;
+                }
+
+                .icoBox {
+                    height: 20px;
+                    width: 20px;
+                    display: grid;
+                    place-items: center;
+                    border: 1px solid rgb(165, 165, 165);
+                    font-size: 14px;
+
+                }
+
+            }
+        }
+    }
+
+    .companyDiv {
+        margin-top: 20px;
+
+        .head {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            color: #000000;
+            padding-bottom: 13px;
+            // border-bottom: 1px solid #D1D1D1;
+        }
+
+        select {
+            width: 100%;
+            padding: 5px 10px;
+            border: 1px solid #D1D1D1;
+            outline: none;
+
+            option {
+                padding: 5px 10px;
+                background: $primary;
+                color: white;
+            }
+        }
+
+    }
+
+    .priceDiv {
+        margin-top: 20px;
+
+        .head {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            color: #000000;
+            padding-bottom: 13px;
+            // border-bottom: 1px solid #D1D1D1;
+        }
+
+        .value {
+            font-weight: 300;
+            font-size: 20px;
+        }
+
+        input {
+            width: 100%;
+            display: block;
+            margin-top: 10px;
+            accent-color: $primary;
+        }
+
+    }
+
+    .clearDiv {
+        margin-top: 40px;
+
+        .clrBtn {
+            border: none;
+            width: 180px;
+            background: $primary;
+            color: white;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            padding: 9px;
+            display: block;
+            margin: auto;
+            scale: 1;
+            transition: all .2s;
+            &:hover{
+                background: black;
+                color: white;
+                scale: 1.2;
+
+
             }
         }
     }
