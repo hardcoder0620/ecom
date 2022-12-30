@@ -4,7 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head >
-        
+      {/* bootstrap css  */}
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
       </Head>
       <body>
         <Main />

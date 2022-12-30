@@ -1,0 +1,126 @@
+// variablles
+$primary : #F47B20;
+// header css here 
+
+header {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    ;
+
+    .navBar {
+        background: white;
+
+        .navList {
+            .nav-link {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 22px;
+                color: #000000;
+
+                &:hover {
+                    color: $primary;
+                }
+
+                &.active {
+                    // color: $primary;
+
+
+                }
+            }
+        }
+
+        .likeCartPro {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+
+            .iconBox {
+                position: relative;
+
+                span {
+                    position: absolute;
+                    top: -25px;
+                    left: 50%;
+                    transform: translate(-50%, 50%);
+                    height: 18px;
+                    width: 18px;
+                    background: $primary;
+                    border-radius: 50%;
+                    display: grid;
+                    place-items: center;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 12px;
+                }
+            }
+        }
+
+    }
+}
+
+
+// .topSlider
+.topSlider {
+
+    .swiper-pagination {
+        scale: 1.4;
+        padding-bottom: 20px;
+
+        .swiper-pagination-bullet {
+            background: $primary;
+        }
+    }
+}
+
+// .shopTopCatDiv
+.shopTopCatDiv {
+    padding-top: 100px;
+    padding-bottom: 120px;
+    background: white;
+
+    .head {
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        color: #000000;
+        font-size: 24px;
+
+    }
+
+    .catCarousel {
+        padding-top: 112px;
+        position: relative;
+
+
+        .catName {
+            margin-top: 20px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 30px;
+            color: #000000;
+        }
+        .navBtns{
+            display: flex;
+            position: absolute;
+            top: 30px;
+            right: 0px;
+            column-gap: 15px;
+            .navBtn{
+                height: 35px;
+                width: 35px;
+                display: grid;
+                place-items: center;
+                background: black;
+                font-size: 24px;
+                cursor: pointer;
+                .iconn{
+                    color: white;
+                }
+                &.swiper-button-disabled{
+                    background: grey;
+                }
+            }
+        }
+    }
+}

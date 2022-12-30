@@ -1,0 +1,96 @@
+header {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+header .navBar {
+  background: white;
+}
+header .navBar .navList .nav-link {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+header .navBar .navList .nav-link:hover {
+  color: #F47B20;
+}
+header .navBar .likeCartPro {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+header .navBar .likeCartPro .iconBox {
+  position: relative;
+}
+header .navBar .likeCartPro .iconBox span {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  height: 18px;
+  width: 18px;
+  background: #F47B20;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.topSlider .swiper-pagination {
+  scale: 1.4;
+  padding-bottom: 20px;
+}
+.topSlider .swiper-pagination .swiper-pagination-bullet {
+  background: #F47B20;
+}
+
+.shopTopCatDiv {
+  padding-top: 100px;
+  padding-bottom: 120px;
+  background: white;
+}
+.shopTopCatDiv .head {
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+}
+.shopTopCatDiv .catCarousel {
+  padding-top: 112px;
+  position: relative;
+}
+.shopTopCatDiv .catCarousel .catName {
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  color: #000000;
+}
+.shopTopCatDiv .catCarousel .navBtns {
+  display: flex;
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+.shopTopCatDiv .catCarousel .navBtns .navBtn {
+  height: 35px;
+  width: 35px;
+  display: grid;
+  place-items: center;
+  background: black;
+  font-size: 24px;
+  cursor: pointer;
+}
+.shopTopCatDiv .catCarousel .navBtns .navBtn .iconn {
+  color: white;
+}
+.shopTopCatDiv .catCarousel .navBtns .navBtn.swiper-button-disabled {
+  background: grey;
+}/*# sourceMappingURL=home.css.map */
