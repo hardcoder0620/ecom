@@ -176,6 +176,11 @@ header .navBar .likeCartPro .iconBox span {
   display: block;
   margin-top: 10px;
   accent-color: #F47B20;
+  scale: 1;
+  transition: all 0.3s;
+}
+.allProductsMain .priceDiv input:hover {
+  scale: 1.1;
 }
 .allProductsMain .clearDiv {
   margin-top: 40px;
@@ -199,4 +204,104 @@ header .navBar .likeCartPro .iconBox span {
   background: black;
   color: white;
   scale: 1.2;
+}
+.allProductsMain .vievDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.allProductsMain .vievDiv .viewOpts {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+.allProductsMain .vievDiv .viewOpts .box {
+  height: 26px;
+  width: 26px;
+  background: rgb(202, 202, 202);
+  display: grid;
+  place-items: center;
+  color: white;
+  transition: all 0.3s;
+}
+.allProductsMain .vievDiv .viewOpts .box.active {
+  background: black;
+}
+.allProductsMain .vievDiv select {
+  outline: none;
+  padding: 5px 10px;
+  border: 1px solid rgb(189, 189, 189);
+}
+.allProductsMain .vievDiv select option {
+  background: #F47B20;
+  color: white;
+}
+.allProductsMain .productsDiv {
+  padding-top: 30px;
+}
+.allProductsMain .productsDiv .product .imgBox {
+  border: 1px solid #D1D1D1;
+  padding: 33px 11px 11px 11px;
+  position: relative;
+}
+.allProductsMain .productsDiv .product .imgBox .likeDivb {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  cursor: pointer;
+  color: #F47B20;
+}
+.allProductsMain .productsDiv .product .proName {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  margin-top: 14px;
+}
+.allProductsMain .productsDiv .product .price {
+  margin-top: 13px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  color: #000000;
+}
+.allProductsMain .productsDiv .productListView {
+  display: flex;
+  align-items: flex-start;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.allProductsMain .productsDiv .productListView .imgBox {
+  border: 1px solid #D1D1D1;
+  padding: 33px 11px 11px 11px;
+  position: relative;
+}
+.allProductsMain .productsDiv .productListView .imgBox .likeDivb {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  cursor: pointer;
+  color: #F47B20;
+}
+.allProductsMain .productsDiv .productListView .content {
+  flex: 1;
+}
+.allProductsMain .productsDiv .productListView .content .proName {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  margin-top: 14px;
+}
+.allProductsMain .productsDiv .productListView .content .price {
+  margin-top: 13px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  color: #000000;
 }/*# sourceMappingURL=home.css.map */
