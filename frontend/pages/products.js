@@ -13,12 +13,13 @@ export default function products() {
     const [curCat, setCurCat] = useState('')
     const [curView, setCurView] = useState('grid')
     return (
-        <div style={{overflow:'hidden'}}>
+        <div style={{ overflow: 'hidden' }}>
 
             <motion.div
                 initial={{ opacity: 0, translateX: '-100%' }}
                 animate={{ opacity: 1, translateX: '0%' }}
                 exit={{ opacity: 0, translateX: '-100%' }}
+                transition={{ type: 'spring', stiffness: 60 }}
             >
                 <Header />
                 <div className="allProductsMain">

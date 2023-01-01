@@ -23,6 +23,8 @@ export default function Home() {
     initial={{ opacity: 0,translateX:'-100%'}}
     animate={{ opacity: 1,translateX:'0%' }}
     exit={{ opacity: 0,translateX:'-100%'}}
+
+    transition={{  type: 'spring', stiffness: 60 }}
     >
       <Head>
         <title>E-commerse</title>

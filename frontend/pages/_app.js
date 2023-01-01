@@ -8,13 +8,11 @@ import { AnimatePresence } from 'framer-motion';
 export default function App({ Component, pageProps }) {
   return(
     <>
-
     <Provider store={store}>
-      <AnimatePresence exitBeforeEnter>
+      {/* <AnimatePresence exitBeforeEnter> */}
     <Component {...pageProps} />
-      </AnimatePresence>
+      {/* </AnimatePresence> */}
     </Provider>
-
     <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" />
 
     </>
