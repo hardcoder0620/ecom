@@ -1,7 +1,7 @@
 const productSchema = require('../models/products')
 
 const allProducts = async (req,res)=>{
-    console.log(req.query)
+    console.log(req.query,'req.query')
     const queryObj = {}
     const {cat}=req.query
     if(cat){

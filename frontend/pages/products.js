@@ -30,24 +30,22 @@ export default function products() {
         getAllProducts(signal)
 
         return () => {
-            // second
             controller.abort();
         }
     }, [])
 
     const getAllProducts = async (signal) => {
         try {
+           
 
             if(router.query.cat){
                 const res = await fetch(`http://localhost:5000/api/products?cat=${router.query.cat}`, {
-                    signal: signal
-                    
-                })
-                const data = await res.json()
-                console.log('data>>>>', data)
-                setProductstState(data.data)
+                signal: signal
+            })
+            const data = await res.json()
+            console.log('data>>>>cat', data)
+            setProductstState(data.data)
             }else{
-
                 const res = await fetch('http://localhost:5000/api/products', {
                     signal: signal
                 })
@@ -55,10 +53,40 @@ export default function products() {
                 console.log('data>>>>', data)
                 setProductstState(data.data)
             }
-           
         } catch (error) {
             console.log(error)
         }
+    }
+
+    const filterByCat = async (cat)=>{
+        setAnime((state)=>{!state})
+        console.log(cat,"category")
+
+        const res = await fetch('http://localhost:5000/api/products')
+        const data = await res.json()
+        console.log('data>>>>', data)
+
+        const filteredProducts =  data.data.filter((product)=>{
+            return product.productCat == cat
+        })
+        console.log(filteredProducts,'filteredProducts')
+       
+        setProductstState(filteredProducts)
+
+
+    }
+
+    const clearFilter = async()=>{
+        const res = await fetch('http://localhost:5000/api/products')
+        const data = await res.json()
+        setProductstState(data.data)
+        setCurCat('')
+        setAnime((state)=>{!state})
+
+    }
+
+    const sortByPrice = (val)=>{
+        console.log(val)
     }
 
 
@@ -77,20 +105,27 @@ export default function products() {
                         <div className="row">
                             <div className="col-lg-3">
                                 <div className="leftSec">
-                                    <div className="catDiv">
-                                        <div className="head">
+                                    <div className="catDiv ">
+                                        <div className="head" >
                                             Categories
                                         </div>
                                         <div className="options">
-                                            <div className="option" onClick={() => { setCurCat('Backpacks') }}>
-                                                <div className="text">
+                                            <div className="option" onClick={() => { 
+                                                setCurCat('Backpacks') 
+                                                filterByCat('bagpacks')
+                                                }}>
+                                                <div className="text " >
                                                     Backpacks
                                                 </div>
                                                 <div className="icoBox">
                                                     {curCat == 'Backpacks' ? <FaCheck /> : null}
                                                 </div>
                                             </div>
-                                            <div className="option" onClick={() => { setCurCat('Ladies Handbags') }}>
+                                            <div className="option" onClick={() => { 
+                                                setCurCat('Ladies Handbags')
+                                                filterByCat('other')
+
+                                         }}>
                                                 <div className="text">
                                                     Ladies Handbags
                                                 </div>
@@ -106,7 +141,6 @@ export default function products() {
                                                     {curCat == 'Luggage' ? <FaCheck /> : null}
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div className="companyDiv">
@@ -130,7 +164,7 @@ export default function products() {
                                         <input type="range" max="5000" min="1000" onChange={(e) => { setCurPrice(e.target.value) }} />
                                     </div>
                                     <div className="clearDiv">
-                                        <button className="clrBtn">
+                                        <button className="clrBtn" onClick={()=>{clearFilter()}}>
                                             Clear Filter
                                         </button>
                                     </div>
@@ -153,9 +187,9 @@ export default function products() {
                                                 <FiGrid />
                                             </div>
                                         </div>
-                                        <select name="" id="">
-                                            <option value="">sort by: price low to hight</option>
-                                            <option value="">sort by: price high to low</option>
+                                        <select name="sortByPrice" id="" onClick={(e)=>{sortByPrice(e.target.value)}}>
+                                            <option value="lowToHigh">sort by: price low to hight</option>
+                                            <option value="highToLow">sort by: price high to low</option>
                                         </select>
                                     </div>
                                     <div className="productsDiv"

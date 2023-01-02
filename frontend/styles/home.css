@@ -307,4 +307,10 @@ header .navBar .likeCartPro .iconBox span {
   font-size: 15px;
   line-height: 22px;
   color: #000000;
+}
+
+.catSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px;
 }/*# sourceMappingURL=home.css.map */
