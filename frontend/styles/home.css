@@ -279,6 +279,9 @@ header .navBar .likeCartPro .iconBox span {
   padding: 33px 11px 11px 11px;
   position: relative;
 }
+.allProductsMain .productsDiv .productListView .imgBox .productImg {
+  width: 200px;
+}
 .allProductsMain .productsDiv .productListView .imgBox .likeDivb {
   position: absolute;
   top: 11px;

@@ -48,10 +48,12 @@ export default function TopCategories() {
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="catBox">
+                                <Link href={'/products?cat=other'} style={{ textDecoration: 'none' }}>
                                     <img src="/images/bag2.png" alt="banner image" className="w-100 bannerImg" />
                                     <div className="catName">
                                         Travel & Luggage
                                     </div>
+                                    </Link>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
