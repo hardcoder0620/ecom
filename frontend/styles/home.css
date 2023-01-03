@@ -245,6 +245,11 @@ header .navBar .likeCartPro .iconBox span {
   padding: 33px 11px 11px 11px;
   position: relative;
 }
+.allProductsMain .productsDiv .product .imgBox .productImg {
+  aspect-ratio: 1;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .allProductsMain .productsDiv .product .imgBox .likeDivb {
   position: absolute;
   top: 11px;
@@ -281,6 +286,9 @@ header .navBar .likeCartPro .iconBox span {
 }
 .allProductsMain .productsDiv .productListView .imgBox .productImg {
   width: 200px;
+  aspect-ratio: 1;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .allProductsMain .productsDiv .productListView .imgBox .likeDivb {
   position: absolute;

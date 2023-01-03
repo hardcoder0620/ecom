@@ -40,44 +40,49 @@ export default function TopCategories() {
                                     <Link href={'/products?cat=bagpacks'} style={{ textDecoration: 'none' }}>
                                         <img src="/images/bag1.jpg" alt="banner image" className="w-100 bannerImg" />
                                         <div className="catName">
-                                            All backpacks
+                                            All backpacks 
                                         </div>
-
                                     </Link>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="catBox">
-                                <Link href={'/products?cat=other'} style={{ textDecoration: 'none' }}>
+                                <Link href={'/products?cat=luggage'} style={{ textDecoration: 'none' }}>
                                     <img src="/images/bag2.png" alt="banner image" className="w-100 bannerImg" />
                                     <div className="catName">
-                                        Travel & Luggage
+                                        Travel & Luggage 
                                     </div>
                                     </Link>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="catBox">
+                                <Link href={'/products?cat=ladiesHandbag'} style={{ textDecoration: 'none' }}>
                                     <img src="/images/bag3.png" alt="banner image" className="w-100 bannerImg" />
                                     <div className="catName">
-                                        Ladies Handbags
+                                        Ladies Handbags 
                                     </div>
+                                    </Link>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="catBox">
+                                <Link href={'/products?cat=travelAccessories'} style={{ textDecoration: 'none' }}>
                                     <img src="/images/bag4.png" alt="banner image" className="w-100 bannerImg" />
                                     <div className="catName">
-                                        Travel Accessories
+                                        Travel Accessories 
                                     </div>
+                                    </Link>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="catBox">
-                                    <img src="/images/bag1.jpg" alt="banner image" className="w-100 bannerImg" />
-                                    <div className="catName">
-                                        All backpacks
-                                    </div>
+                                    <Link href={'/products?cat=bagpacks'} style={{ textDecoration: 'none' }}>
+                                        <img src="/images/bag1.jpg" alt="banner image" className="w-100 bannerImg" />
+                                        <div className="catName">
+                                            All backpacks 
+                                        </div>
+                                    </Link>
                                 </div>
                             </SwiperSlide>
 
@@ -91,8 +96,6 @@ export default function TopCategories() {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </>

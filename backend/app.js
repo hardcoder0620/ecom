@@ -28,9 +28,9 @@ app.use('/api/products', productsRouter)
 
 const start = async () => {
     await connectDb(process.env.mongo_uri)
-    // productSchema.create(products)
-    // productSchema.deleteMany({},()=>{
-    //     console.log('deleted')
+    // productSchema.create(products) 
+    // productSchema.deleteMany({},()=>{ 
+    // console.log('deleted') 
     // }) 
 
     app.listen(port, () => console.log(`Example app listening on port ${port}!`))

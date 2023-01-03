@@ -314,7 +314,10 @@ header {
                 padding: 33px 11px 11px 11px;
                 position: relative;
 
-                .productImg {}
+                .productImg {
+                    aspect-ratio: 1;
+                    object-fit: contain;
+                }
 
                 .likeDivb {
                     position: absolute;
@@ -356,6 +359,8 @@ header {
 
                 .productImg {
                     width: 200px;
+                    aspect-ratio: 1;
+                    object-fit: contain;
                 }
 
                 .likeDivb {

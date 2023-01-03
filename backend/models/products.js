@@ -23,6 +23,10 @@ const productSchema = mongoose.Schema({
     productCat:{
         type:String,
         required:true
+    },
+    productCompany:{
+        type:String,
+        required:true
     }
 })
 

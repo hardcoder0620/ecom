@@ -15,14 +15,14 @@ export default function products() {
     const [curCat, setCurCat] = useState('')
     const [curView, setCurView] = useState('grid')
     const [productsState, setProductstState] = useState([])
-    const [anime,setAnime]=useState(true)
+    const [anime, setAnime] = useState(true)
 
 
     const variants = {
-        rotate: { x: [ -100, 0], opacity:[0,1] , transition: {type:"spring" } },
-        stop: { x: [ -100, 0], opacity:[0,1] ,transition: {type:"spring"} }
+        rotate: { x: [-100, 0], opacity: [0, 1], transition: { type: "spring" } },
+        stop: { x: [-100, 0], opacity: [0, 1], transition: { type: "spring" } }
 
-      };
+    };
 
     useEffect(() => {
         const controller = new AbortController();
@@ -36,17 +36,17 @@ export default function products() {
 
     const getAllProducts = async (signal) => {
         try {
-           
 
-            if(router.query.cat){
-                const res = await fetch(`http://localhost:5000/api/products?cat=${router.query.cat}`, {
-                signal: signal
-            })
-            const data = await res.json()
-            console.log('data>>>>cat', data)
-            setProductstState(data.data)
-            }else{
-                const res = await fetch('http://localhost:5000/api/products', {
+
+            if (router.query.cat) {
+                const res = await fetch(`http://192.168.1.3:5000/api/products?cat=${router.query.cat}`, {
+                    signal: signal
+                })
+                const data = await res.json()
+                console.log('data>>>>cat', data)
+                setProductstState(data.data)
+            } else {
+                const res = await fetch('http://192.168.1.3:5000/api/products', {
                     signal: signal
                 })
                 const data = await res.json()
@@ -58,36 +58,61 @@ export default function products() {
         }
     }
 
-    const filterByCat = async (cat)=>{
-        setAnime((state)=>{!state})
-        console.log(cat,"category")
+    const filterByCat = async (cat) => {
+        setAnime((state) => { !state })
+        console.log(cat, "category")
 
-        const res = await fetch('http://localhost:5000/api/products')
+        const res = await fetch('http://192.168.1.3:5000/api/products')
         const data = await res.json()
         console.log('data>>>>', data)
 
-        const filteredProducts =  data.data.filter((product)=>{
+        const filteredProducts = data.data.filter((product) => {
             return product.productCat == cat
         })
-        console.log(filteredProducts,'filteredProducts')
-       
+        console.log(filteredProducts, 'filteredProducts')
+
         setProductstState(filteredProducts)
 
 
     }
 
-    const clearFilter = async()=>{
-        const res = await fetch('http://localhost:5000/api/products')
+    const clearFilter = async () => {
+        const res = await fetch('http://192.168.1.3:5000/api/products')
         const data = await res.json()
         setProductstState(data.data)
         setCurCat('')
-        setAnime((state)=>{!state})
-
+        setAnime((state) => { !state })
     }
 
-    const sortByPrice = (val)=>{
+    const sortByPrice = async (val) => {
         console.log(val)
+        const res = await fetch(`http://192.168.1.3:5000/api/products?sort=${val}`)
+        const data = await res.json()
+        console.log('sort data>>>>', data)
+        setProductstState(data.data)
+        setAnime((state) => { state })
+
     }
+
+    const filterByCompany = async (val)=>{
+        console.log(val)
+        const res = await fetch(`http://192.168.1.3:5000/api/products?com=${val}`)
+        const data = await res.json()
+        console.log('company data>>>>', data)
+        setProductstState(data.data)
+        setAnime((state) => { !state })
+    }
+
+    const filterByPrice = async (val)=>{
+        console.log(val)
+        const res = await fetch(`http://192.168.1.3:5000/api/products?price=${val}`)
+        const data = await res.json()
+        console.log('company data>>>>', data)
+        setProductstState(data.data)
+        setAnime((state) => { !state })
+
+    }
+
 
 
     return (
@@ -110,10 +135,10 @@ export default function products() {
                                             Categories
                                         </div>
                                         <div className="options">
-                                            <div className="option" onClick={() => { 
-                                                setCurCat('Backpacks') 
+                                            <div className="option" onClick={() => {
+                                                setCurCat('Backpacks')
                                                 filterByCat('bagpacks')
-                                                }}>
+                                            }}>
                                                 <div className="text " >
                                                     Backpacks
                                                 </div>
@@ -121,11 +146,11 @@ export default function products() {
                                                     {curCat == 'Backpacks' ? <FaCheck /> : null}
                                                 </div>
                                             </div>
-                                            <div className="option" onClick={() => { 
+                                            <div className="option" onClick={() => {
                                                 setCurCat('Ladies Handbags')
-                                                filterByCat('other')
+                                                filterByCat('ladiesHandbag')
 
-                                         }}>
+                                            }}>
                                                 <div className="text">
                                                     Ladies Handbags
                                                 </div>
@@ -133,7 +158,10 @@ export default function products() {
                                                     {curCat == 'Ladies Handbags' ? <FaCheck /> : null}
                                                 </div>
                                             </div>
-                                            <div className="option" onClick={() => { setCurCat('Luggage') }}>
+                                            <div className="option" onClick={() => {
+                                                setCurCat('Luggage')
+                                                filterByCat('luggage')
+                                            }}>
                                                 <div className="text">
                                                     Luggage
                                                 </div>
@@ -141,31 +169,46 @@ export default function products() {
                                                     {curCat == 'Luggage' ? <FaCheck /> : null}
                                                 </div>
                                             </div>
+                                            <div className="option" onClick={() => {
+                                                setCurCat('travelAccessories')
+                                                filterByCat('travelAccessories')
+                                            }}>
+                                                <div className="text">
+                                                    Travel Accessories
+                                                </div>
+                                                <div className="icoBox">
+                                                    {curCat == 'travelAccessories' ? <FaCheck /> : null}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="companyDiv">
                                         <div className="head">Company</div>
-                                        <select name="" id="">
+                                        <select name="" id="" onChange={(e)=>{
+                                            filterByCompany(e.target.value)
+                                        }}>
                                             <option value="">select company</option>
-                                            <option value="1">iphone</option>
-                                            <option value="2">nokia</option>
-                                            <option value="3">samsung</option>
-                                            <option value="4" onClick={() => { console.log('iball') }}>iball</option>
-                                            <option value="5">vivo</option>
+                                            <option value="puma">puma</option>
+                                            <option value="skybags">skybags</option>
+                                            <option value="adidas">adidas</option>
+                                            <option value="safari">safari</option>
                                         </select>
                                     </div>
                                     <div className="priceDiv">
                                         <div className="head">
-                                            Price
+                                            Price 
                                         </div>
                                         <div className="value">
-                                            Rs {curPrice}
+                                            Rs {curPrice} 
                                         </div>
-                                        <input type="range" max="5000" min="1000" onChange={(e) => { setCurPrice(e.target.value) }} />
+                                        <input type="range" max="7000" min="1000" onChange={(e) => { 
+                                            setCurPrice(e.target.value) 
+                                            filterByPrice(e.target.value)
+                                            }} />
                                     </div>
                                     <div className="clearDiv">
-                                        <button className="clrBtn" onClick={()=>{clearFilter()}}>
-                                            Clear Filter
+                                        <button className="clrBtn" onClick={() => { clearFilter() }}>
+                                            Clear Filter 
                                         </button>
                                     </div>
                                 </div>
@@ -176,24 +219,25 @@ export default function products() {
                                         <div className="viewOpts">
                                             <div className={curView == 'list' ? "box active" : "box"} onClick={() => {
                                                 setCurView('list')
-                                                setAnime((state)=>!state)
+                                                setAnime((state) => !state)
                                             }}>
                                                 <FaList />
                                             </div>
                                             <div className={curView == 'grid' ? "box active" : "box"} onClick={() => {
                                                 setCurView('grid')
-                                                setAnime((state)=>!state)
+                                                setAnime((state) => !state)
                                             }}>
                                                 <FiGrid />
                                             </div>
                                         </div>
-                                        <select name="sortByPrice" id="" onClick={(e)=>{sortByPrice(e.target.value)}}>
-                                            <option value="lowToHigh">sort by: price low to hight</option>
-                                            <option value="highToLow">sort by: price high to low</option>
+                                        <select name="sortByPrice" id="" onChange={(e) => { sortByPrice(e.target.value) }}>
+                                            <option value="">Select Sort By</option>
+                                            <option value="lowToHigh">price low to hight</option>
+                                            <option value="highToLow">price high to low</option>
                                         </select>
                                     </div>
                                     <div className="productsDiv"
-                                   
+
                                     >
                                         <div className="row gy-4">
                                             {productsState.map((product, index) => {
@@ -201,14 +245,14 @@ export default function products() {
                                                     if (curView == "grid") {
                                                         return (
                                                             <div className="col-lg-3" key={index}
-                                                       
-                                                             >
+
+                                                            >
                                                                 <motion.div className="product"
-                                                                 variants={variants}
-                                                                 animate={anime?'rotate':'stop'}
+                                                                    variants={variants}
+                                                                    animate={anime ? 'rotate' : 'stop'}
                                                                 >
                                                                     <div className="imgBox">
-                                                                        <img src={`http://localhost:5000${product.productImgs[0]}`} alt="bag image" className="w-100 productImg" />
+                                                                        <img src={`http://192.168.1.3:5000${product.productImgs[0]}`} alt="bag image" className="w-100 productImg" />
                                                                         <div className="likeDivb">
                                                                             <FiHeart />
                                                                             {/* <BsFillHeartFill/> */}
@@ -227,13 +271,13 @@ export default function products() {
                                                         return (
                                                             <div className="col-12" key={index}>
                                                                 <motion.div className="productListView"
-                                                                 variants={variants}
-                                                                 animate={anime?'rotate':'stop'}
-                                                             
+                                                                    variants={variants}
+                                                                    animate={anime ? 'rotate' : 'stop'}
+
                                                                 >
 
                                                                     <div className="imgBox">
-                                                                    <img src={`http://localhost:5000${product.productImgs[0]}`} alt="bag image" className="productImg" />
+                                                                        <img src={`http://192.168.1.3:5000${product.productImgs[0]}`} alt="bag image" className="productImg" />
                                                                         <div className="likeDivb">
                                                                             <FiHeart />
                                                                             {/* <BsFillHeartFill/> */}
@@ -242,10 +286,10 @@ export default function products() {
                                                                     <div className="content">
 
                                                                         <div className="proName">
-                                                                        {product.productName}
+                                                                            {product.productName}
                                                                         </div>
                                                                         <div className="price">
-                                                                        Rs. {product.productPrice}
+                                                                            Rs. {product.productPrice}
                                                                         </div>
                                                                     </div>
                                                                 </motion.div>
@@ -254,7 +298,7 @@ export default function products() {
                                                     }
                                                 }
                                             })}
-                                   
+
                                         </div>
                                     </div>
                                 </div>
